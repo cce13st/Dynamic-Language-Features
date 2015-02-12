@@ -1,16 +1,29 @@
 # Decorator which makes negative return value to zero
-def bound(func):
+def deco1(func):
     def calc(x):
+    	print "Deco1"
         result = func(x)
         if result < 0:
             result = 0
         return result
     return calc
 
-@bound
+def deco2(func):
+	def calc(x):
+		print "Deco2"
+		result = func(x)
+		if result > 10:
+			result = 10
+		return result
+	return calc
+
+@deco1
+@deco2
 def foo(x):
     return x + 42
-@bound
+    
+@deco1
+@deco2
 def bar(x):
     return x - 42
 

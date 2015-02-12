@@ -20,15 +20,15 @@ one();
 console.log("3");
 console.dir( {name: name} );
 
+/*
 
-console.log("------------");
+Result of Node.js execution
 
-function outer(x) {
-    return function () { console.log(x) };
-}
+1
+{ name: 'inner', other: 'findme' }
+2
+{ name: 'middle', other: 'findme' }
+3
+{ name: 'outer' } // "other" is undefined
 
-var foo1 = outer("1");
-var foo2 = outer("2");
-
-foo1();
-foo2();
+*/
